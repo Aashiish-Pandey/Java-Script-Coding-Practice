@@ -1,7 +1,9 @@
-//Palindrome
+//Reverse a number 
 
-let isPalindrome = (inString) => {
-  return inString.split("").reverse().join("") === inString;
-};
+const revNumber = (inNumber) => {
 
-console.log(isPalindrome("abba"));
+    const revString = inNumber.toString().split('').reverse().join('');
+    return(parseInt(revString))
+}
+
+console.log(revNumber(198))
