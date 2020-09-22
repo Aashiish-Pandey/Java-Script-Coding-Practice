@@ -1,9 +1,10 @@
-//Reverse a number 
+//convert first letter of every word of a sentence into capital letter
 
-const revNumber = (inNumber) => {
+let captializeLetter = (inSentence) => {
+  return inSentence
+    .split(" ")
+    .map(word => word[0].toUpperCase() + word.substring(1))
+    .join(" ");
+};
 
-    const revString = inNumber.toString().split('').reverse().join('');
-    return(parseInt(revString))
-}
-
-console.log(revNumber(198))
+console.log(captializeLetter("my naMe is ashiSH"));
