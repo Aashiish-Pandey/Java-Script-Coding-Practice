@@ -1,19 +1,19 @@
-//Longest Word in a sentence::
+// array chunking 
+// split an array into chunked array of specific length
 
-const findLongestWord = (inSentence) => {
-  const wordArray = inSentence.toLowerCase().match(/[a-z0-9]+/g);
-  const sortedArray = wordArray.sort(
-    (fWord, sWord) => sWord.length - fWord.length
-  );
-  const lWordArray = sortedArray.filter(
-    (word) => word.length >= sortedArray[0].length
-  );
 
-  if (lWordArray.length == 1) {
-    return lWordArray[0];
-  } else {
-    return lWordArray;
-  }
-};
+const chunkArray = (inArray,inLen) => {
 
-console.log(findLongestWord("Hi there ,I am Ashish Pandey ,allahabad"));
+    let i = 0 
+    chunkedArray = []
+
+    while(i<inArray.length) {
+
+        chunkedArray.push(inArray.slice(i,i+inLen))
+        i+=inLen
+    }
+
+    return chunkedArray
+}
+
+console.log(chunkArray([1,2,3,5,6,7,8,9,10],2))
