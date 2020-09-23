@@ -1,13 +1,19 @@
-// Fizz Buzz
+//Longest Word in a sentence::
 
-for (let i = 1; i <= 100; i++) {
-  if (i % 15 === 0) {
-    console.log("Fizz buzz");
-  } else if (i % 5 === 0) {
-    console.log("Buzz");
-  } else if (i %3  === 0 && i % 5===0) {
-    console.log("Fizz ");
+const findLongestWord = (inSentence) => {
+  const wordArray = inSentence.toLowerCase().match(/[a-z0-9]+/g);
+  const sortedArray = wordArray.sort(
+    (fWord, sWord) => sWord.length - fWord.length
+  );
+  const lWordArray = sortedArray.filter(
+    (word) => word.length >= sortedArray[0].length
+  );
+
+  if (lWordArray.length == 1) {
+    return lWordArray[0];
   } else {
-    console.log(i);
+    return lWordArray;
   }
-}
+};
+
+console.log(findLongestWord("Hi there ,I am Ashish Pandey ,allahabad"));
