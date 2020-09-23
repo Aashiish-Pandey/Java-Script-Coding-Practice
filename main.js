@@ -1,19 +1,30 @@
-// array chunking 
-// split an array into chunked array of specific length
+// Flatten array of array into a single array
 
+//Aproch1 : using reduce method
 
-const chunkArray = (inArray,inLen) => {
+// const flattenArray = (inArray) => {
 
-    let i = 0 
-    chunkedArray = []
+//     return inArray.reduce((a,b) => a.concat(b))
 
-    while(i<inArray.length) {
+//     }
 
-        chunkedArray.push(inArray.slice(i,i+inLen))
-        i+=inLen
-    }
+//     console.log(flattenArray([[1,2],[3,4],[5,6],[7,8],[9,10]]))
 
-    return chunkedArray
-}
+////////////////////////////////////////////////////////////////////////
 
-console.log(chunkArray([1,2,3,5,6,7,8,9,10],2))
+//Aproch 2: using spread operator
+
+const flattenArray = (inArray) => {
+  return [].concat(...inArray);
+};
+
+console.log(
+  flattenArray([
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [7, 8],
+    [9, 10],
+    [11, 12],
+  ])
+);
