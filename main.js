@@ -1,29 +1,13 @@
-//return the character that is most common in a string
+// Fizz Buzz
 
-const findMaxChar = (inString) => {
-  let charObj = {};
-  let maxOcc = 0;
-  let maxChar = "";
-
-  for (let char of inString) {
-    if (charObj[char]) {
-      charObj[char]++;
-    } else {
-      charObj[char] = 1;
-    }
+for (let i = 1; i <= 100; i++) {
+  if (i % 15 === 0) {
+    console.log("Fizz buzz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (i %3  === 0 && i % 5===0) {
+    console.log("Fizz ");
+  } else {
+    console.log(i);
   }
-  
-  for(let char in charObj) {
-
-    if (charObj[char]>maxOcc) {
-
-        maxOcc=charObj[char]
-        maxChar=char
-    }
-  }
-
-  console.log(`maximum occuring char in the string is ${maxChar} and it occurs ${maxOcc} times`)
-};
-
-findMaxChar("aaaabcccdd");
-
+}
