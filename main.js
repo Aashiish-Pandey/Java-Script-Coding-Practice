@@ -1,10 +1,29 @@
-//convert first letter of every word of a sentence into capital letter
+//return the character that is most common in a string
 
-let captializeLetter = (inSentence) => {
-  return inSentence
-    .split(" ")
-    .map(word => word[0].toUpperCase() + word.substring(1))
-    .join(" ");
+const findMaxChar = (inString) => {
+  let charObj = {};
+  let maxOcc = 0;
+  let maxChar = "";
+
+  for (let char of inString) {
+    if (charObj[char]) {
+      charObj[char]++;
+    } else {
+      charObj[char] = 1;
+    }
+  }
+  
+  for(let char in charObj) {
+
+    if (charObj[char]>maxOcc) {
+
+        maxOcc=charObj[char]
+        maxChar=char
+    }
+  }
+
+  console.log(`maximum occuring char in the string is ${maxChar} and it occurs ${maxOcc} times`)
 };
 
-console.log(captializeLetter("my naMe is ashiSH"));
+findMaxChar("aaaabcccdd");
+
