@@ -1,23 +1,24 @@
-// add all numbers
+//sum of All prime numbers in a given range
 
-// const addAll = (...numbers) => {
-//   let sum = 0;
+const isPrime = (num) => {
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+    return true;
+  }
+};
 
-//   for (num of numbers) {
-//     sum += num;
-//   }
-//   return sum;
-// };
+const sumPrime = (inNum) => {
+  let sum = 0;
 
-// console.log(addAll(1, 2, 3, 4, 5, 6));
+  for (let num = 2; num<=inNum;num++) {
+    if (isPrime(num)) {
+      sum += num;
+    }
+  }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
-
-// using reduce method
-
-const addAll = (...numbers) => {
-  let sum = numbers.reduce((a, b) => a + b, 0);
   return sum;
 };
 
-console.log(addAll(1, 2, 3, 4, 5, 6,10));
+console.log(sumPrime(10))
