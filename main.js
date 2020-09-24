@@ -1,24 +1,11 @@
-//sum of All prime numbers in a given range
+// Seek and Destroy
 
-const isPrime = (num) => {
-  for (let i = 2; i < num; i++) {
-    if (num % i == 0) {
-      return false;
-    }
-    return true;
-  }
+//Remove from the array whatever is in the following argument . returns the left over number in an array
+
+const removeElemments = (arr, ...rest) => {
+  return arr.filter((arrEl) => !rest.includes(arrEl));
 };
 
-const sumPrime = (inNum) => {
-  let sum = 0;
-
-  for (let num = 2; num<=inNum;num++) {
-    if (isPrime(num)) {
-      sum += num;
-    }
-  }
-
-  return sum;
-};
-
-console.log(sumPrime(10))
+console.log(
+  removeElemments([1, 2, 3, 4, 5, 6, "hello", "ashish"], 1, 2, "hello")
+);
