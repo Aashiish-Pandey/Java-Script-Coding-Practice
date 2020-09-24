@@ -1,30 +1,23 @@
-// Flatten array of array into a single array
+// add all numbers
 
-//Aproch1 : using reduce method
+// const addAll = (...numbers) => {
+//   let sum = 0;
 
-// const flattenArray = (inArray) => {
+//   for (num of numbers) {
+//     sum += num;
+//   }
+//   return sum;
+// };
 
-//     return inArray.reduce((a,b) => a.concat(b))
+// console.log(addAll(1, 2, 3, 4, 5, 6));
 
-//     }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-//     console.log(flattenArray([[1,2],[3,4],[5,6],[7,8],[9,10]]))
+// using reduce method
 
-////////////////////////////////////////////////////////////////////////
-
-//Aproch 2: using spread operator
-
-const flattenArray = (inArray) => {
-  return [].concat(...inArray);
+const addAll = (...numbers) => {
+  let sum = numbers.reduce((a, b) => a + b, 0);
+  return sum;
 };
 
-console.log(
-  flattenArray([
-    [1, 2],
-    [3, 4],
-    [5, 6],
-    [7, 8],
-    [9, 10],
-    [11, 12],
-  ])
-);
+console.log(addAll(1, 2, 3, 4, 5, 6,10));
