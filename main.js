@@ -1,11 +1,23 @@
-// Seek and Destroy
+// sort by height in non descending order , people sitting between fix trees of equal length
 
-//Remove from the array whatever is in the following argument . returns the left over number in an array
+items = [-1, 150, 190, 170, -1, -1, 160, 180];
+const sortByHeight = (arr) => {
+  indArr = [];
+  itemArr = [];
 
-const removeElemments = (arr, ...rest) => {
-  return arr.filter((arrEl) => !rest.includes(arrEl));
+  items.forEach((item, index) => {
+    if (item === -1) {
+      indArr.push(index);
+    } else {
+      itemArr.push(item);
+    }
+  });
+
+  sortedItem = itemArr.sort((a, b) => a - b);
+
+  indArr.forEach((tIndex) => sortedItem.splice(tIndex, 0, -1));
+
+  return sortedItem;
 };
 
-console.log(
-  removeElemments([1, 2, 3, 4, 5, 6, "hello", "ashish"], 1, 2, "hello")
-);
+console.log(sortByHeight(items))
