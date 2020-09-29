@@ -1,23 +1,16 @@
-// sort by height in non descending order , people sitting between fix trees of equal length
+//sum of even and odd numbers 
 
-items = [-1, 150, 190, 170, -1, -1, 160, 180];
-const sortByHeight = (arr) => {
-  indArr = [];
-  itemArr = [];
+numbers = [1,2,3,4,5,6,7]  
 
-  items.forEach((item, index) => {
-    if (item === -1) {
-      indArr.push(index);
-    } else {
-      itemArr.push(item);
-    }
-  });
+const evenOddSums = (arr) => {
 
-  sortedItem = itemArr.sort((a, b) => a - b);
+  let evenSum = 0
+  let oddSum = 0
 
-  indArr.forEach((tIndex) => sortedItem.splice(tIndex, 0, -1));
+  arr.forEach(num => num%2===0?(evenSum+=num):(oddSum+=num)) 
+  return[evenSum,oddSum]
+  
+  
+}
 
-  return sortedItem;
-};
-
-console.log(sortByHeight(items))
+console.log(evenOddSums(numbers))
