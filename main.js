@@ -16,13 +16,8 @@ let winIcecream = function (message) {
   });
 };
 
-cleanRoom()
-  .then(function (result) {
-    return removeGarbage(result);
-  })
-  .then(function (result) {
-    return winIcecream(result);
-  })
-  .then(function (result) {
-    console.log("finished" + result);
-  });
+//// if we want to perform anyting or execute anything only  after all the promises gets completed
+
+Promise.all([cleanRoom, removeGarbage, winIcecream]).then(function () {
+  console.log("all finsihed");
+});
