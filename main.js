@@ -1,19 +1,28 @@
-let promiseToCleanTheRoom = new Promise(function(resolve,reject) {
+let cleanRoom = function () {
+  return new Promise(function (resolve, reject) {
+    resolve("cleaned the room");
+  });
+};
 
-    let isClean = true
+let removeGarbage = function (message) {
+  return new Promise(function (resolve, reject) {
+    resolve(message + " remove Garbage ");
+  });
+};
 
-    if(isClean) {
+let winIcecream = function (message) {
+  return new Promise(function (resolve, reject) {
+    resolve(message + " won Icecream");
+  });
+};
 
-        resolve('clean')
-    } else {
-        reject('not clean')
-    }
-})
-
-promiseToCleanTheRoom.then(function(fromResolve) {
-
-    console.log("The room is " + fromResolve)
-}).catch(function(fromReject) {
-
-    console.log('the room is '+fromReject)
-})
+cleanRoom()
+  .then(function (result) {
+    return removeGarbage(result);
+  })
+  .then(function (result) {
+    return winIcecream(result);
+  })
+  .then(function (result) {
+    console.log("finished" + result);
+  });
