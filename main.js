@@ -1,16 +1,20 @@
-//sum of even and odd numbers 
+this.table = "window table"
 
-numbers = [1,2,3,4,5,6,7]  
+console.log(window.table)
 
-const evenOddSums = (arr) => {
+this.garage = {
 
-  let evenSum = 0
-  let oddSum = 0
-
-  arr.forEach(num => num%2===0?(evenSum+=num):(oddSum+=num)) 
-  return[evenSum,oddSum]
-  
-  
+    table: "garage table"
 }
 
-console.log(evenOddSums(numbers))
+console.log(window.garage.table)
+
+let ashishRoom = {
+
+    table: 'ashish table',
+    cleanTable() {
+        console.log(`cleaning ${this.table}`)
+    }
+}
+
+console.log(ashishRoom.cleanTable())
