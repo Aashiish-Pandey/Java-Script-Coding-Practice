@@ -1,13 +1,18 @@
+'use strict';
+
 this.table = "window table"
 
-console.log(window.table)
+const cleanTable = function(soap) {
+
+    console.log(`cleaning ${this.table} using ${soap}`)
+}
+
 
 this.garage = {
 
     table: "garage table"
 }
 
-console.log(window.garage.table)
 
 let ashishRoom = {
 
@@ -17,4 +22,6 @@ let ashishRoom = {
     }
 }
 
-console.log(ashishRoom.cleanTable())
+cleanTable.call(this,'some soap')
+cleanTable.call(window.garage,'some soap')
+cleanTable.call(ashishRoom,'some soap')
