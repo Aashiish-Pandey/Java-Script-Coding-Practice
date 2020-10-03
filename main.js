@@ -1,27 +1,19 @@
-'use strict';
+let promiseToCleanTheRoom = new Promise(function(resolve,reject) {
 
-this.table = "window table"
+    let isClean = true
 
-const cleanTable = function(soap) {
+    if(isClean) {
 
-    console.log(`cleaning ${this.table} using ${soap}`)
-}
-
-
-this.garage = {
-
-    table: "garage table"
-}
-
-
-let ashishRoom = {
-
-    table: 'ashish table',
-    cleanTable() {
-        console.log(`cleaning ${this.table}`)
+        resolve('clean')
+    } else {
+        reject('not clean')
     }
-}
+})
 
-cleanTable.call(this,'some soap')
-cleanTable.call(window.garage,'some soap')
-cleanTable.call(ashishRoom,'some soap')
+promiseToCleanTheRoom.then(function(fromResolve) {
+
+    console.log("The room is " + fromResolve)
+}).catch(function(fromReject) {
+
+    console.log('the room is '+fromReject)
+})
