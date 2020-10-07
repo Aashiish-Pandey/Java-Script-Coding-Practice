@@ -1,9 +1,15 @@
-document
-  .querySelector("#category")
-  .addEventListener("click", (e) =>{
+var x = function(j) {
 
-    console.log(e.target.id);
-    window.location.href = "/"+ e.target.id;  
+  this.i = 0
+  this.j = j
+}
 
+x.prototype.getj = function() {
 
-  } );
+  return this.j
+}
+
+var x1 = new x(1)
+var x2 = new x(2)
+
+console.log(x1,x2)
