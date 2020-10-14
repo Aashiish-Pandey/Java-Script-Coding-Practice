@@ -1,11 +1,14 @@
-// Write a JavaScript program to compute the union of two arrays.
+const myFunction = (inString, word, pos=-1) => {
+   
+    let inArray = inString.split(" ")
 
-const myFunction = (arr1,arr2) => {
+  if (pos ===-1) {
+    inArray.splice(0,0,word)
+  } else {
 
-    return([...new Set(arr1), ...new Set(arr2)])
+    inArray.splice(pos,0,word)
+  }
+return inArray.join(" ")
+};
 
-
-}
-
-
-console.log(myFunction([1,2,2,3,3,4],[5,5,6,7,7,7]))
+console.log(myFunction("I love my India", "why", 3));
