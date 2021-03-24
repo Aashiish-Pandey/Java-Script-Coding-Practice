@@ -1,25 +1,13 @@
 // call apply and bind methods:
 
-let Name1  = {
+let name = {
+  fName: "ashish",
+  lName: "pandey",
+};
 
-  fName:"ashish",
-  lName:"pandey"
-}
+let printName = function () {
+  console.log(this.fName + " " + this.lName);
+};
 
-let Name2 = {
-
-  fName:"Shivam",
-  lName:"Pandey"
-}
-
-let printFullName = function(homeTown, state) {
-
-  console.log(this.fName + " " + this.lName +"from" +homeTown +state)
-
-
-}
-
-printFullName.call(Name1,"allahabad","up")
-printFullName.apply(Name2,["allahabad","uttarpradesh"])
-let returnedF=printFullName.bind(Name2,"katnai","Phoolpur")
-returnedF()
+let printMyName = printName.bind(name);
+printMyName();
