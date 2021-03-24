@@ -21,5 +21,5 @@ let printFullName = function(homeTown, state) {
 
 printFullName.call(Name1,"allahabad","up")
 printFullName.apply(Name2,["allahabad","uttarpradesh"])
-let returnedF=printFullName.bind(Name2,["katnai","Phoolpur"])
+let returnedF=printFullName.bind(Name2,"katnai","Phoolpur")
 returnedF()
