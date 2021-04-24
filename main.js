@@ -1,16 +1,35 @@
-let array1 = [1, 2, 3, 4, 5];
-let array2 = [6, 7, 8, 9, 10];
-let array3 = [11, 12, 13, 14, 15];
-let bigArray = [
-  [1, [5,5,5,5,5,5], 3, 4, 5],
-  [6, ,[6,6,6,6,6,6],7, 8, 9, 10],
-  [11, 12, 13, 14, 15],
+let animals = [
+  "dog",
+  "cat",
+  "hen",
+  "pig",
+  "dog",
+  "cat",
+  "dog",
+  "cat",
+  "dog",
+  "cat",
+  "hen",
+  "pig",
+  "dog",
+  "hen",
+  "pig",
+  "dog",
 ];
 
-let sum = bigArray.reduce((acc, cvalue, index, array) => {
-  
+// find unique values using reducer
 
-  return acc.concat(cvalue)
-},[]).reduce((c,a)=>c.concat(a),[])
+// let unqAnimals = animals.reduce((acc, cvalue) => {
+//   if (!acc.includes(cvalue)) {
+//     acc.push(cvalue);
+//   }
 
-console.log(sum);
+//   return acc;
+// }, []);
+
+// console.log(unqAnimals);
+
+// find unique values using set and spread operator
+
+
+console.log([...new Set(animals)])
