@@ -1,35 +1,17 @@
-let animals = [
-  "dog",
-  "cat",
-  "hen",
-  "pig",
-  "dog",
-  "cat",
-  "dog",
-  "cat",
-  "dog",
-  "cat",
-  "hen",
-  "pig",
-  "dog",
-  "hen",
-  "pig",
-  "dog",
-];
+let animals =["dog","cat","hen","pig","dog","cat","dog","cat","dog","cat","hen","pig","dog",,"hen","pig","dog"]
+// count number of unique animals
+let unqAnimals = animals.reduce((acc,cvalue)=>{
 
-// find unique values using reducer
+  if(cvalue in acc) {
 
-// let unqAnimals = animals.reduce((acc, cvalue) => {
-//   if (!acc.includes(cvalue)) {
-//     acc.push(cvalue);
-//   }
+    acc[cvalue]++
+  } else {
 
-//   return acc;
-// }, []);
+    acc[cvalue] =1
+  }
 
-// console.log(unqAnimals);
+  return acc
 
-// find unique values using set and spread operator
+},{})
 
-
-console.log([...new Set(animals)])
+console.log(unqAnimals)
