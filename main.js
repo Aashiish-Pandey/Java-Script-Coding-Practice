@@ -23,4 +23,4 @@ let companies = `[
 
 ]`
 
-console.log(JSON.parse(companies))
+console.log(JSON.parse(companies).map(item=>item.companyName))
