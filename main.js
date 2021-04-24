@@ -1,13 +1,26 @@
-// call apply and bind methods:
+let companies = [
+  {
+      "companyName": "Tcs",
+      "noOfEmployee": 10000,
+      "CEO": "aaaa",
+      "rating":4
+  },
 
-let name = {
-  fName: "ashish",
-  lName: "pandey",
-};
+  {
+      "companyName": "ABC",
+      "noOfEmployee": 100,
+      "CEO": "bbbb",
+      "rating":2
+  },
 
-let printName = function () {
-  console.log(this.fName + " " + this.lName);
-};
+  {
+      "companyName": "XYZ",
+      "noOfEmployee": 700,
+      "CEO": "bbbb",
+      "rating":5
+  }
 
-let printMyName = printName.bind(name);
-printMyName();
+
+]
+
+console.log(companies)
