@@ -1,4 +1,4 @@
-let companies = [
+let companies = `[
   {
       "companyName": "Tcs",
       "noOfEmployee": 10000,
@@ -21,6 +21,6 @@ let companies = [
   }
 
 
-]
+]`
 
-console.log(companies)
+console.log(JSON.parse(companies))
