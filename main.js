@@ -1,26 +1,16 @@
-let companies = `[
-  {
-      "companyName": "Tcs",
-      "noOfEmployee": 10000,
-      "CEO": "aaaa",
-      "rating":4
-  },
+let array1 = [1, 2, 3, 4, 5];
+let array2 = [6, 7, 8, 9, 10];
+let array3 = [11, 12, 13, 14, 15];
+let bigArray = [
+  [1, [5,5,5,5,5,5], 3, 4, 5],
+  [6, ,[6,6,6,6,6,6],7, 8, 9, 10],
+  [11, 12, 13, 14, 15],
+];
 
-  {
-      "companyName": "ABC",
-      "noOfEmployee": 100,
-      "CEO": "bbbb",
-      "rating":2
-  },
+let sum = bigArray.reduce((acc, cvalue, index, array) => {
+  
 
-  {
-      "companyName": "XYZ",
-      "noOfEmployee": 700,
-      "CEO": "bbbb",
-      "rating":5
-  }
+  return acc.concat(cvalue)
+},[]).reduce((c,a)=>c.concat(a),[])
 
-
-]`
-
-console.log(JSON.parse(companies).map(item=>item.companyName))
+console.log(sum);
