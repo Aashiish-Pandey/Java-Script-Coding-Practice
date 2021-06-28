@@ -1,17 +1,21 @@
-let animals =["dog","cat","hen","pig","dog","cat","dog","cat","dog","cat","hen","pig","dog",,"hen","pig","dog"]
-// count number of unique animals
-let unqAnimals = animals.reduce((acc,cvalue)=>{
+// Palindrome number
 
-  if(cvalue in acc) {
+const isPalindrome = (inNum) => {
+  const num = inNum;
+  let newNum = 0;
+  let rem = 0;
 
-    acc[cvalue]++
-  } else {
-
-    acc[cvalue] =1
+  while (inNum) {
+    rem = inNum % 10;
+    newNum = newNum * 10 + rem;
+    inNum = Math.floor(inNum / 10);
   }
 
-  return acc
+  if (newNum === num) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-},{})
-
-console.log(unqAnimals)
+console.log(isPalindrome(121));
