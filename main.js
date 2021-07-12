@@ -1,14 +1,16 @@
-// contains and every method
+ const arry = [1,2,3,4]
 
-const arr1 = [1, 3, 6, 9, 6, 6, 6, 10, 11, 54, 101];
-const arr2 = [1, 3, 6, 9];
 
-const isSubset = (arr1, arr2) => {
-  let isSub = arr2.every((item) => arr1.includes(item));
+const findMaxMin = function(inArr) {
 
-  isSub
-    ? console.log(`${arr2} is subset of ${arr1}`)
-    : console.log(`${arr2} is not  subset of ${arr1}`);
-};
+    const max = Math.max(...inArr)
+    const min= Math.min(...inArr)
 
-isSubset(arr1,arr2);
+    const sum = inArr.reduce((ca,acc)=> ca+acc,0)
+
+    return[sum-max,sum-min]
+
+
+}
+
+console.log(findMaxMin(arry))
