@@ -1,16 +1,9 @@
- const arry = [1,2,3,4]
+let x = 12345656;
+let count = 0;
 
-
-const findMaxMin = function(inArr) {
-
-    const max = Math.max(...inArr)
-    const min= Math.min(...inArr)
-
-    const sum = inArr.reduce((ca,acc)=> ca+acc,0)
-
-    return[sum-max,sum-min]
-
-
+while (x) {
+  x = Math.floor(x / 10);
+  count++;
 }
 
-console.log(findMaxMin(arry))
+console.log(count);
