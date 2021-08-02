@@ -1,18 +1,13 @@
-const radius = [1, 2, 3, 4];
+const users = [
+  { fname: "ashish", lName: "Pandey", age: 26 },
+  { fname: "ajay", lName: "devgan", age: 56 },
+  { fname: "amit", lName: "singh", age: 26 },
+  { fname: "mark", lName: "Juk", age: 32 },
+];
 
-const area = function (radius) {
-  return Math.PI * radius * radius;
-};
+// name of the persons whose age is less than  50
 
-Array.prototype.myMap = function (logic) {
-  const outPutArray = [];
 
-  for (let i = 0; i < this.length; i++) {
-    outPutArray.push(logic(this[i]));
-  }
+const name = users.filter(persons=>persons.age<50).map(person=>person.fname)
 
-  return outPutArray;
-};
-
-console.log(radius.map(area));
-console.log(radius.myMap(area));
+console.log(name)
