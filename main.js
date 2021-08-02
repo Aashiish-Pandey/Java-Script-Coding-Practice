@@ -1,31 +1,27 @@
-const readius = [1, 2, 3, 4];
+const radius = [1, 2, 3, 4];
 
-const calculateArea = function (inArr) {
-  let output = [];
-
-  for (let i = 0; i < inArr.length; i++) {
-    output.push(Math.PI * inArr[i] * inArr[i]);
-  }
-
-  return output;
+const calculateArea = function (raduis) {
+  return Math.PI * radius * radius;
 };
 
-const calculatePerimter = function (inArr) {
+const calculatePerimter = function (radius) {
+  return 2 * Math.PI * radius;
+};
+
+const calculateDiameter = function (radius) {
+  return 2 * radius;
+};
+
+const calculate = function (inArr, logic) {
   const output = [];
+
   for (let i = 0; i < inArr.length; i++) {
-    output.push(2 * Math.PI * inArr[i]);
+    output.push(logic(inArr[i]));
   }
+
   return output;
 };
 
-const calculateDiameter = function (inArr) {
-  const output = [];
-  for (let i = 0; i < inArr.length; i++) {
-    output.push(2 * inArr[i]);
-  }
-  return output;
-};
-
-console.log(calculateArea(readius));
-console.log(calculatePerimter(readius));
-console.log(calculateDiameter(readius));
+console.log(calculate(radius, calculateArea));
+console.log(calculate(radius, calculatePerimter));
+console.log(calculate(radius, calculateDiameter));
