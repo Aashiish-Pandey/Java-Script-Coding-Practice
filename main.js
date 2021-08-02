@@ -1,27 +1,18 @@
 const radius = [1, 2, 3, 4];
 
-const calculateArea = function (raduis) {
+const area = function (radius) {
   return Math.PI * radius * radius;
 };
 
-const calculatePerimter = function (radius) {
-  return 2 * Math.PI * radius;
-};
+Array.prototype.myMap = function (logic) {
+  const outPutArray = [];
 
-const calculateDiameter = function (radius) {
-  return 2 * radius;
-};
-
-const calculate = function (inArr, logic) {
-  const output = [];
-
-  for (let i = 0; i < inArr.length; i++) {
-    output.push(logic(inArr[i]));
+  for (let i = 0; i < this.length; i++) {
+    outPutArray.push(logic(this[i]));
   }
 
-  return output;
+  return outPutArray;
 };
 
-console.log(calculate(radius, calculateArea));
-console.log(calculate(radius, calculatePerimter));
-console.log(calculate(radius, calculateDiameter));
+console.log(radius.map(area));
+console.log(radius.myMap(area));
